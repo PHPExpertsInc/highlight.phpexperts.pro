@@ -1,0 +1,14 @@
+.env*
+/vendor
+.idea
+/.vscode
+/bettergist.db
+/packages
+/coverage
+.php_cs.cache
+.phpunit.result.cache
+
+/reports/
+/storage/
+/workdir/
+

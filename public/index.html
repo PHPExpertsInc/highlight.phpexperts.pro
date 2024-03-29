@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/highlight-tempest.css" />
+        <style>
+        code { display: block; white-space: pre; font-family: 'Fira Code', monospace; }
+        </style>
+    </head>
+    <body>
+        <h1>An API Server for tempest/highlight</h1>
+        <p>Welcome to the API server for <span style="font-family: 'Fira Code', monospace;"><a target="_blank" href="https://github.com/tempestphp/highlight/">tempest/highlight</a></span>.</p>
+        <p>The API route is pretty simple:</p>
+        <code>
+    POST: /highlight
+    <span class="hl-property">{</span>
+        <span class="hl-keyword">&quot;lang&quot;</span>:  <span class="hl-value">&quot;language&quot;</span>,
+        <span class="hl-keyword">&quot;text&quot;</span>:  <span class="hl-value">&quot;JSON-encoded text&quot;</span>
+    <span class="hl-property">}</span>
+
+    Output: text/html
+        </code>
+        <p>Don't forget to include the Tempest Highlight CSS links in your HTML:</p>
+        <code>    wget <a href="https://gitcdn.link/repo//tempestphp/highlight/main/src/Themes/highlight-tempest.css" target="_blank">https://gitcdn.link/repo//tempestphp/highlight/main/src/Themes/highlight-tempest.css</a></code>
+    </body>
+</html>

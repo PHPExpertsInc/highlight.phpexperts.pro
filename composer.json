@@ -1,0 +1,25 @@
+{
+    "name": "phpexperts/tempest-highlight-api",
+    "description": "A light-weight, dockerized API server for tempest/highlight.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Phpexperts\\TempestHighlightServer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Theodore R. Smith",
+            "email": "theodore@phpexperts.pro"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "tempest/highlight": "^1.0",
+        "phpexperts/dockerize": "^9.1",
+        "pecee/simple-router": "^5.4"
+    }
+}

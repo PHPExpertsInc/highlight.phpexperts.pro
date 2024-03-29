@@ -1,0 +1,186 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1c0d742555bf2b48152d99f54ae3968f",
+    "packages": [
+        {
+            "name": "pecee/simple-router",
+            "version": "5.4.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skipperbent/simple-php-router.git",
+                "reference": "a2843d5b1e037f8b61cc99f27eab52a28bf41dfd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/a2843d5b1e037f8b61cc99f27eab52a28bf41dfd",
+                "reference": "a2843d5b1e037f8b61cc99f27eab52a28bf41dfd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1",
+                "phpstan/phpstan": "^1",
+                "phpstan/phpstan-deprecation-rules": "^1",
+                "phpstan/phpstan-phpunit": "^1",
+                "phpstan/phpstan-strict-rules": "^1",
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pecee\\": "src/Pecee/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Sessingø",
+                    "email": "simon.sessingoe@gmail.com"
+                }
+            ],
+            "description": "Simple, fast PHP router that is easy to get integrated and in almost any project. Heavily inspired by the Laravel router.",
+            "keywords": [
+                "framework",
+                "input-handler",
+                "laravel",
+                "pecee",
+                "php",
+                "request-handler",
+                "route",
+                "router",
+                "routing",
+                "routing-engine",
+                "simple-php-router",
+                "url-handling"
+            ],
+            "support": {
+                "issues": "https://github.com/skipperbent/simple-php-router/issues",
+                "source": "https://github.com/skipperbent/simple-php-router/issues"
+            },
+            "time": "2023-12-11T21:48:25+00:00"
+        },
+        {
+            "name": "phpexperts/dockerize",
+            "version": "v9.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPExpertsInc/dockerize.git",
+                "reference": "93c10f1cd120b497b20d948b481115dc1ebb24f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPExpertsInc/dockerize/zipball/93c10f1cd120b497b20d948b481115dc1ebb24f0",
+                "reference": "93c10f1cd120b497b20d948b481115dc1ebb24f0",
+                "shasum": ""
+            },
+            "suggest": {
+                "phpexperts/docker-phan": "Dockerized phan/phan",
+                "phpexperts/docker-phpstan": "Dockerized phpstan/phpstan",
+                "phpexperts/docker-rector": "Dockerized rector/rector"
+            },
+            "bin": [
+                "bin/php",
+                "bin/composer"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Experts, Inc.",
+                    "homepage": "https://www.phpexperts.pro/"
+                },
+                {
+                    "name": "Theodore R. Smith",
+                    "homepage": "https://www.linkedin.com/in/tedrsmith"
+                }
+            ],
+            "description": "The quickest and easiest way to dockerize any PHP app.",
+            "homepage": "https://www.phpexperts.pro/",
+            "keywords": [
+                "docker",
+                "dockerize",
+                "new project"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPExpertsInc/dockerize/issues",
+                "source": "https://github.com/PHPExpertsInc/dockerize/tree/v9.1.1"
+            },
+            "time": "2024-01-17T20:56:10+00:00"
+        },
+        {
+            "name": "tempest/highlight",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tempestphp/highlight.git",
+                "reference": "371413ae6056626b276dee508afdaa5f28711827"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/371413ae6056626b276dee508afdaa5f28711827",
+                "reference": "371413ae6056626b276dee508afdaa5f28711827",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.21",
+                "larapack/dd": "^1.1",
+                "league/commonmark": "^2.4",
+                "phpstan/phpstan": "^1.10.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tempest\\Highlight\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brendt@stitcher.io"
+                }
+            ],
+            "description": "Fast, extensible, server-side code highlighting",
+            "support": {
+                "issues": "https://github.com/tempestphp/highlight/issues",
+                "source": "https://github.com/tempestphp/highlight/tree/1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/brendt",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-28T12:32:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
