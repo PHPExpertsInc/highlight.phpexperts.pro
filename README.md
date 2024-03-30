@@ -45,7 +45,7 @@ Running natively requires PHP v8.3 or higher with ext-json.
 
 ```html
     <link rel="stylesheet" href="https://highlight.phpexperts.pro/css/highlight-tempest.css" />
-    <code lang="JS">
+    <code lang="JavaScript">
     console.log("Hello, World!");
     </code>
     <script src="https://highlight.phpexperts.pro/js/highlight.min.js" defer="defer"></script>
