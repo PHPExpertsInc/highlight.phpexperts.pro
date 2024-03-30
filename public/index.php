@@ -20,6 +20,20 @@ require_once __DIR__ . '/../vendor/autoload.php';
 /* Load external routes file */
 require_once __DIR__ . '/../src/routes.php';
 
+// I *HATE* CORS!!!
+// Check if the request is a preflight request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Handle preflight requests
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    exit;
+}
+
+// Handle the actual request
+header('Access-Control-Allow-Origin: *');
+
+
 /**
  * The default namespace for route-callbacks, so we don't have to specify it each time.
  * Can be overwritten by using the namespace config option on your routes.

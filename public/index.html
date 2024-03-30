@@ -3,23 +3,107 @@
     <head>
         <link rel="stylesheet" href="/css/highlight-tempest.css" />
         <style>
-        code { display: block; white-space: pre; font-family: 'Fira Code', monospace; }
+#phpexperts_logo {
+    width: 250px; height: 250px;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+}
+
+#phpexperts_logo img {  width: 100% }
+
+@media (max-width:801px)  {
+    #phpexperts_logo {
+        width: 100px; height: 100px;
+    }
+}
+
         </style>
     </head>
     <body>
+      <div id="phpexperts_logo"><a href="https://www.phpexperts.pro/" target="_blank"><img src="phpexperts.avif"/></a></div>
+      <article>
         <h1>An API Server for tempest/highlight</h1>
         <p>Welcome to the API server for <span style="font-family: 'Fira Code', monospace;"><a target="_blank" href="https://github.com/tempestphp/highlight/">tempest/highlight</a></span>.</p>
         <p>The API route is pretty simple:</p>
-        <code>
+        <code lang="JSON">
     POST: /highlight
-    <span class="hl-property">{</span>
-        <span class="hl-keyword">&quot;lang&quot;</span>:  <span class="hl-value">&quot;language&quot;</span>,
-        <span class="hl-keyword">&quot;text&quot;</span>:  <span class="hl-value">&quot;JSON-encoded text&quot;</span>
-    <span class="hl-property">}</span>
+    {
+        "lang":  "language",
+        "text":  "JSON-encoded text"
+    }
 
     Output: text/html
         </code>
         <p>Don't forget to include the Tempest Highlight CSS links in your HTML:</p>
-        <code>    wget <a href="https://gitcdn.link/repo//tempestphp/highlight/main/src/Themes/highlight-tempest.css" target="_blank">https://gitcdn.link/repo//tempestphp/highlight/main/src/Themes/highlight-tempest.css</a></code>
+        <code lang="sh">    wget <a href="https://gitcdn.link/repo//tempestphp/highlight/main/src/Themes/highlight-tempest.css" target="_blank">https://gitcdn.link/repo//tempestphp/highlight/main/src/Themes/highlight-tempest.css</a></code>
+    <hr/>
+        <h2>tempest/highlight Code Highlighting  Pure HTML5 Demo</h2>
+        <h3>HTML Demo</h3>
+        <code lang="HTML">
+            &lt;link rel="stylesheet" href="https://highlight.phpexperts.pro/css/highlight-tempest.css" /&gt;
+            &lt;p&gt;This is the actual code from this page to run your own syntax highlighting in pure HTML5.&lt;/p&gt;
+            &lt;code lang="JS"&gt;
+            console.log("Hello, World!");
+            &lt;/code&gt;
+            &lt;script src="https://highlight.phpexperts.pro/js/highlight.min.js" defer="defer"&gt;&lt;/script&gt;
+        </code>
+        <h3>PHP Demo</h3>
+        <code lang="php">
+            // This is a working client for using this API server.
+            use PHPExperts\RESTSpeaker\NoAuth;
+            use PHPExperts\RESTSpeaker\RESTSpeaker;
+
+            $url = 'https://highlight.phpexperts.pro';
+            $highlighter = new class(new NoAuth(), $url) extends RESTSpeaker {
+            public function highlight(string $language, string $text): string
+            {
+            $url = 'https://highlight.phpexperts.pro';
+            $result = $this->post($url . '/highlight', [
+            'lang' => $language,
+            'text' => $text
+            ]);
+
+            if ($this->getLastStatusCode() === 400) {
+            throw new \RuntimeException($result);
+            }
+
+            return $result;
+            }
+            };
+
+            echo $highlighter->highlight('PHP', 'echo "Hello, World!\n";');
+
+        </code>
+        <h3>SQL Demo</h3>
+        <code lang="SQL">
+            CREATE VIEW report_unanalyzed_packages AS
+            SELECT (p.vendor::text || '/'::text) || p.project::text AS package,
+            c.updated_at
+            FROM packages p
+            LEFT JOIN raw_code_stats c ON c.package_id = p.id
+            LEFT JOIN disqualified_packages d ON d.package_id = p.id
+            WHERE d.package_id IS NULL AND (c.updated_at < (now() + '-3 days'::interval) OR c.updated_at IS NULL)
+            ORDER BY p.vendor, p.project;
+        </code>
+
+        <h3>CSS Demo</h3>
+        <code lang="css">
+        code { display: block; white-space: pre; font-family: 'Fira Code', monospace; }
+
+        :root {
+            --background-color: #f3f3f3;
+            --text-color: #000;
+            --keyword-color: #4F95D1;
+            --property-color: #46b98d;
+            --type-color: #D14F57;
+            --generic-color: #9D3AF6;
+            --value-color: #515248;
+            --variable-color: #515248;
+            --comment-color: #888888;
+        }
+        </code>
+      </article>
+      <script src="/js/highlight.min.js" defer="defer"></script>
     </body>
 </html>

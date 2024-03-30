@@ -20,6 +20,12 @@
         "ext-json": "*",
         "tempest/highlight": "^1.0",
         "phpexperts/dockerize": "^9.1",
-        "pecee/simple-router": "^5.4"
+        "pecee/simple-router": "^5.4",
+        "phpexperts/rest-speaker": "^2.6"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.0",
+        "octoper/cuzzle": "^3.1",
+        "monolog/monolog": "^2.9"
     }
 }

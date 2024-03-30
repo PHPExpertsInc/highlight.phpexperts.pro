@@ -1,0 +1,12 @@
+--2024-03-29 21:08:39--  https://pbs.twimg.com/media/F-U6O8xaEAAO7uU?format=jpg
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving pbs.twimg.com (pbs.twimg.com)... 192.16.59.1, 2606:2800:258:80d:3b4:1d2d:1c2:26bb
+Connecting to pbs.twimg.com (pbs.twimg.com)|192.16.59.1|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 494887 (483K) [image/jpeg]
+Saving to: ‘F-U6O8xaEAAO7uU?format=jpg’
+
+F-U6O8xaEAAO7uU?format=jpg             0%[                                                                     ]       0  --.-KB/s               F-U6O8xaEAAO7uU?format=jpg            52%[===================================>                                 ] 255.99K  1008KB/s               F-U6O8xaEAAO7uU?format=jpg           100%[====================================================================>] 483.29K  1.81MB/s    in 0.3s    
+
+2024-03-29 21:08:39 (1.81 MB/s) - ‘F-U6O8xaEAAO7uU?format=jpg’ saved [494887/494887]
+

@@ -39,5 +39,37 @@ Running natively requires PHP v8.3 or higher with ext-json.
     # Edit it and add a `server_name my.url;` directive.
     systemctl restart nginx
 
+## Clients ##
+
+### Pure JavaScript Client ###
+
+### PHP Client ###
+
+First, `composer require phpexperts/rest-speaker`. Then:
+
+Copy [src/client.php] or copy this code directly.
+
+```php
+    use PHPExperts\RESTSpeaker\NoAuth;
+    use PHPExperts\RESTSpeaker\RESTSpeaker;
+
+    $url = 'https://highlight.phpexperts.pro';
+    $highlighter = new class(new NoAuth(), $url) extends RESTSpeaker {
+        public function highlight(string $language, string $text): string
+        {
+            $result = $this->post('/highlight', [
+                'lang' => $language,
+                'text' => $text
+            ]);
     
+            if ($this->getLastStatusCode() === 400) {
+                throw new \RuntimeException($result);
+            }
+    
+            return $result;
+        }
+    };
+    
+    echo $highlighter->highlight('PHP', 'echo "Hello, World!\n";');
+```
 

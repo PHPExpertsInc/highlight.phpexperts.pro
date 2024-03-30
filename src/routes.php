@@ -58,18 +58,20 @@ SimpleRouter::post('/highlight', function () {
     $response = Router::response();
     $data = json_decode(file_get_contents('php://input'), true);
 
+    $errors = '';
     $lang = $data['lang'] ?? null;
     if (!$lang) {
-        $response->httpCode(400)->json([
-            'error' => "No 'lang' key."
-        ]);
+        $errors .= '<h3 style="color: red">[HIGHLIGHTER ERROR] No "lang" provided.</h3>' . "\n";
     }
 
     $text = $data['text'] ?? null;
     if (!$text) {
-        $response->httpCode(400)->json([
-            'error' => "No 'text' key."
-        ]);
+        $errors .= '<h3 style="color: red">[HIGHLIGHTER ERROR] No "text" provided.</h3>' . "\n";
+    }
+    if ($errors !== '') {
+        $response->httpCode(400);
+
+        return $errors;
     }
 
     $highlighter = new Tempest\Highlight\Highlighter();
