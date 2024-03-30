@@ -43,6 +43,14 @@ Running natively requires PHP v8.3 or higher with ext-json.
 
 ### Pure JavaScript Client ###
 
+```html
+    <link rel="stylesheet" href="https://highlight.phpexperts.pro/css/highlight-tempest.css" />
+    <code lang="JS">
+    console.log("Hello, World!");
+    </code>
+    <script src="https://highlight.phpexperts.pro/js/highlight.min.js" defer="defer"></script>
+```
+
 ### PHP Client ###
 
 First, `composer require phpexperts/rest-speaker`. Then:
